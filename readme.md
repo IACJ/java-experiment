@@ -6,3 +6,4 @@
 * 实验4：线性回归(Linear Regression)找到最佳拟合直线
 * 实验5：统计学生成绩
 * 实验6-1：图形计算器
+* 实验7：JDBC方式操作数据库 (含Excel导入mysql、mysql导出Excel)
