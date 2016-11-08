@@ -1,23 +1,27 @@
 package pac;
 
-import java.util.HashMap;
-import java.util.Map;
-
+import java.io.File;
 
 public class Main {
-	
-	Map<EncodeHintType, Object> hints = new HashMap<EncodeHintType, Object>();
-	hints.put(EncodeHintType.MARGIN, 0);
-	BitMatrix bitMatrix = new QRCodeWriter().encode("生成二维码的内容",
-	BarcodeFormat.QR_CODE, 256, 256,hints);
-	int width = bitMatrix.getWidth();
-	int height = bitMatrix.getHeight();
-	BufferedImage image = new BufferedImage(width, height,BufferedImage.TYPE_INT_ARGB);
-	for (int x = 0; x < width; x++) {
-	     for (int y = 0; y < height; y++) {
-	           image.setRGB(x, y, bitMatrix.get(x, y) == true ? 
-	           Color.BLACK.getRGB():Color.WHITE.getRGB());
-	    }
+	public static void main(String[] args) {
+		
+		//测试生成二维码
+		System.out.println("开始生成二维码");
+		String contents = "这是一段由Java生成的二维码的内容\n :)";      //内容
+		String FileName = "./output.png";						//文件名
+        EncodeImgZxing.writeToFile(contents, "png", new File(FileName));  //生成二维码
+        System.out.println("二位码已生成为 : "+FileName);
+        
+        //测试解析二维码
+        System.out.println(); 
+        System.out.println("二维码内容解析结果为 : "); 
+        String content = DecodeImgZxing.decodeImg(new File("./output.png"));
+		System.out.println(content);	
+		
+		System.out.println(); 
+        System.out.println("测试结束");
 	}
-	ImageIO.write(image,"png", new File("./"));
 }
+
+
+
