@@ -13,5 +13,5 @@
 * 实验10：重复文件的查询
 
 ##详细实验报告请参考
-201536551220_贾中昊.doc
+[201536551220_贾中昊.doc](https://github.com/IACJ/java_experiment/blob/master/201536551220_贾中昊.doc?raw=true)
 
