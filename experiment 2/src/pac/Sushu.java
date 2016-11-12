@@ -2,8 +2,7 @@ package pac;
 
 public class Sushu {
 	
-	/**
-	 *  运用筛法求出不大于n的素数的个数，并返回最大的素数
+	/**运用筛法求出不大于n的素数的个数，并返回最大的素数
 	 * @param n
 	 * @return maxSushu 最大的素数
 	 */
@@ -29,14 +28,14 @@ public class Sushu {
 			}
 		}
 		System.out.println();
-		System.out.println("不大于"+n+"的最大素数: "+maxSushu);
-		System.out.println("素数个数: "+ count);
+		System.out.println("找到素数个数: "+ count);
+		System.out.println("不大于"+n+"的最大素数: "+maxSushu);	
 		return maxSushu;
 	}
 	
 	/** 判断 x是不是素数
-	 * @param x应为大于2的整数
-	 * @return x是不是素数
+	 * @param x 应为大于2的整数
+	 * @return 是不是素数
 	 */
 	public boolean isSushu(int x) {
 		for (int i = 2; i <= x / 2; i++) {

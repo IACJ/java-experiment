@@ -1,9 +1,10 @@
 package pac;
 import java.io.*;
 import java.util.Scanner;
+
 public class K_Means {
-	private int k =0;
 	private String fileName ="";
+	private int k =0;
 	private int n = 0;
 	private point[] arr;
 	private int[] marks;

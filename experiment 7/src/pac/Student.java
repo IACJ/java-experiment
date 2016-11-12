@@ -37,8 +37,10 @@ public class Student {
 			sql = "SET NAMES utf8";
 			stmt.executeUpdate(sql);
 		}catch(SQLException se){   
+			se.printStackTrace();
 			System.out.println("数据库连接失败！");   
-			se.printStackTrace() ;  
+			System.out.println("请检查数据库是否处于开启状态且配置正确");   
+			System.exit(1);
 		}catch(ClassNotFoundException e){   
 			System.out.println("找不到驱动程序类 ，加载驱动失败！");   
 			e.printStackTrace() ;   

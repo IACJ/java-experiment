@@ -1,9 +1,6 @@
 package pac;
 import java.util.Scanner;
-/**
- * @author ACJ
- *
- */
+
 public class Main {
 
 	public static void main(String[] args) {
