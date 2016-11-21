@@ -7,7 +7,7 @@ public class Main {
 		
 		//测试生成二维码
 		System.out.println("开始生成二维码");
-		String contents = "这是一段由Java生成的二维码的内容\n :)";      //内容
+		String contents = "谷歌";      //内容
 		String FileName = "./output.png";						//文件名
         EncodeImgZxing.writeToFile(contents, "png", new File(FileName));  //生成二维码
         System.out.println("二位码已生成为 : "+FileName);
