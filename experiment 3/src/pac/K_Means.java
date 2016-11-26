@@ -19,6 +19,11 @@ public class K_Means {
 			this.y = y;
 		}
 		
+		public point(point a){
+			this.x = a.x;
+			this.y = a.y;
+		}
+		
 		public void show(){
 			System.out.println("["+x+","+y+"]");
 		}
@@ -59,9 +64,12 @@ public class K_Means {
 	
 	
 	public void run(){
+		
+		
 		for (int i=0;i<k;i++){
 			centers[i] = new point(Math.random()*10-5,Math.random()*10-5);
 		}
+		initCenters();
 		
 		int count = 0;
 		do{
@@ -108,6 +116,29 @@ public class K_Means {
 		System.out.println(k + "个簇的质心如下：");
 		for(int i = 0;i<k;i++){
 			centers[i].show();
+		}
+	}
+	private void initCenters() {
+		int[] choose = new int [k];
+		
+		for (int i=0;i<k;i++){
+			boolean ok;
+			int temp;	
+			do{
+				temp = (int) Math.floor(Math.random()*n);
+				ok = true;
+				
+				for (int j=0;j<i;j++){
+					if(choose[j] == temp){
+						ok = false;
+						break;
+					}
+				}
+			}while(!ok);	
+			choose[i] = temp;
+		}
+		for (int i=0;i<k;i++){
+			centers[i] = new point(arr[ choose[i] ]);
 		}
 	}
 }
